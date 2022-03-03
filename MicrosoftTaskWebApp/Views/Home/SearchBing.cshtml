@@ -1,0 +1,45 @@
+﻿
+@{
+    ViewData["Title"] = "SearchBing";
+}
+@using MicrosoftTaskWebApp.Models
+@model System.Array
+
+
+@{
+    var data = ViewBag.Message;
+
+}
+
+    <div class="text-center">
+        <h1 class="display-4">Find Your Public Figure's</h1>
+        <p>Instagram:</p>
+
+
+        <form action="/Home/SearchBing" method="post">
+            <div class="autocomplete" style="width:300px;">
+                <input id="myInput" type="text" name="query" placeholder="Celebrity">
+            </div>
+            <input type="submit" value="Search">
+        </form>
+        <h3> Name: @data.name </h3>
+        <h3> URL :<a href="@data.url">@data.url</a></h3>
+        <h3> Info: @data.snippet </h3>
+        <h3>
+            DB Old Searches:
+            @{ foreach (var tmp in data.DBresult)
+                {
+
+                    @tmp
+                    <br />
+                }}
+        </h3>
+        
+
+        <!-- comment
+    <script type="text/javascript"
+            id="bcs_js_snippet"
+            src="https://ui.customsearch.ai/api/ux/rendering-js?customConfig=091fc9a5-5130-4417-9a1b-20dc46458976&market=en-US&version=latest&q=">
+    </script>
+    -->
+    </div>
