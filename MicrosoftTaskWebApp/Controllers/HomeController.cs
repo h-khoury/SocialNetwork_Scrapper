@@ -89,7 +89,7 @@ namespace MicrosoftTaskWebApp.Controllers
 
                 builder.DataSource = "microsofttask20200109010627dbserver.database.windows.net";
                 builder.UserID = "Hanakh";
-                builder.Password = "1Q2w3e4r";
+                builder.Password = "";
                 builder.InitialCatalog = "WebJobsApp20200111120814_db";
 
                 using (SqlConnection connection = new SqlConnection(builder.ConnectionString))
